@@ -1,0 +1,36 @@
+{-# START_FILE package.yaml #-}
+name:                {{name}}
+version:             0.1.0.0
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: ./.
+
+executables:
+  {{name}}-exe:
+    main:                Main.hs
+    source-dirs:         ./.
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - {{name}}
+
+{-# START_FILE Lib.hs #-}
+module Lib
+    ( someFunc
+    ) where
+
+someFunc :: IO ()
+someFunc = putStrLn "Hello world"
+
+{-# START_FILE Main.hs #-}
+module Main where
+
+import Lib
+
+main :: IO ()
+main = someFunc

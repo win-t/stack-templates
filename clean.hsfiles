@@ -6,12 +6,12 @@ dependencies:
 - base >= 4.7 && < 5
 
 library:
-  source-dirs: ./.
+  source-dirs: .
 
 executables:
   {{name}}-exe:
     main:                Main.hs
-    source-dirs:         ./.
+    source-dirs:         .
     ghc-options:
     - -threaded
     - -rtsopts

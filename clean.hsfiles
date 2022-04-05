@@ -19,18 +19,8 @@ executables:
     dependencies:
     - {{name}}
 
-{-# START_FILE Lib.hs #-}
-module Lib
-    ( someFunc
-    ) where
-
-someFunc :: IO ()
-someFunc = putStrLn "Hello world"
-
 {-# START_FILE Main.hs #-}
 module Main where
 
-import Lib
-
 main :: IO ()
-main = someFunc
+main = putStrLn "Hello World"
